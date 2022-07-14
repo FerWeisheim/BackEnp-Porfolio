@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author ferna
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class EducacionController {
     @Autowired
     IEducacionService  ieducacionservice;
