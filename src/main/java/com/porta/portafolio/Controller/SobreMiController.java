@@ -9,6 +9,7 @@ import com.porta.portafolio.Interface.ISobreMiService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,11 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author ferna
  */
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class SobreMiController {
     @Autowired
     ISobreMiService isobremi;
-    //@PreAuthorize("hasRol('ADMIN')")
+   
     @GetMapping("sobremi/traer")
     public List<SobreMi> getSobreMi(){
         return isobremi.getSobreMi();
@@ -42,7 +44,7 @@ public class SobreMiController {
     }
     
     @PutMapping("sobremi/editar/{id}")
-    public SobreMi editSobreMi(@PathVariable int id,
+    public SobreMi editSobreMi(@PathVariable Integer id,
                               @RequestBody SobreMi sobremi){
     sobremi.setId(id);
     isobremi.saveSobreMi(sobremi);

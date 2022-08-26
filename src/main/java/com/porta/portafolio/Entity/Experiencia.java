@@ -4,6 +4,7 @@
  */
 package com.porta.portafolio.Entity;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,25 +18,34 @@ import lombok.Setter;
  *
  * @author ferna
  */
-@Getter
-@Setter
 @Entity
-public class Proyecto {
+@Setter
+@Getter
+public class Experiencia {
+  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
+  
     @NotNull
-    @Size(min=1,max=50,message="no se puede cargar")
-    private String proyecto;
+    @Size(min = 1, max = 500, message = "no se puede cargar mas")
+    private String empresa;
+
     @NotNull
-    @Size(min=1,max=50000,message="no se puede cargar")
+    @Size(min = 1, max = 500, message = "no se puede cargar mas")
+    private String puesto;
+
+    @NotNull
+    @Size(min = 1, max = 500, message = "no se puede cargar mas")
     private String descripcion;
+
     @NotNull
-    @Size(min=1,max=200,message="no se puede cargar")
-    private String urlSourceCode;
+    @Size(min = 1, max = 500, message = "no se puede cargar mas")
+    private String fechaIni;
+
     @NotNull
-    @Size(min=1,max=200,message="no se puede cargar")
-    private String img;
+    @Size(min = 1, max = 500, message = "no se puede cargar mas")
+    private String fechaFin;
     
 }

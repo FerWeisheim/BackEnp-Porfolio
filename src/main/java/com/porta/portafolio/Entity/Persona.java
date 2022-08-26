@@ -27,7 +27,6 @@ public class Persona {
     @Size(min = 1, max = 50, message = "No se puede cargar")
     private String apellido;
     @NotNull
-    @Size(min = 1, max = 50, message = "No se puede cargar")
     private String img;
     @NotNull
     @Size(min = 1, max = 50, message = "No se puede cargar")

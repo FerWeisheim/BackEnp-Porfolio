@@ -41,9 +41,9 @@ public class Educacion {
 
     @NotNull
     @Size(min = 1, max = 500, message = "no se puede cargar mas")
-    private Date fechaIni;
+    private String fechaIni;
 
     @NotNull
     @Size(min = 1, max = 500, message = "no se puede cargar mas")
-    private Date fechaFin;
+    private String fechaFin;
 }
